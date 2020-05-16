@@ -1,5 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
+import { render, getByTestId, findByTestId, fireEvent } from "@testing-library/react";
+import * as rtl from "@testing-library/dom"
 import CheckoutForm from "./CheckoutForm";
 
 // Write up the two tests here and make sure they are testing what the title shows
@@ -7,3 +8,21 @@ import CheckoutForm from "./CheckoutForm";
 test("form header renders", () => {});
 
 test("form shows success message on submit with form details", () => {});
+
+it('checkout form test', async () => {
+
+  
+  const {getByTestId, findByTestId} = render(<CheckoutForm />);
+  
+  const expectedName = 'Taja';
+  
+  
+  const firstName = getByTestId('firstName');
+  
+  fireEvent.change(firstName,{ target:{value:expectedName}})
+  
+  
+  
+//   fireEvent.click(button)
+//   await waitFor(()=> findByTestId('success-message'))
+  });

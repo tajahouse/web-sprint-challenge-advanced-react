@@ -6,19 +6,8 @@ import { useForm } from "../hooks/useForm";
 // Build out the logic needed for a form custom hook (see the useForm.js file)
 // and replace the necessary stateful logic from CheckoutForm with the hook
 
-const CheckoutForm = (props) => {
-  const [showSuccessMessage, handleSubmit, handleChanges, values] = useForm(false);
-
-
-  // const handleChanges = (e) => {
-  //   setValues({ ...values, [e.target.name]: e.target.value });
-  // };
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setShowSuccessMessage(true);
-  // };
-
+const CheckoutForm = () => {
+  const [ showSuccessMessage, values, handleSubmit, handleChanges] = useForm(false);
 
   return (
     <>
@@ -30,6 +19,7 @@ const CheckoutForm = (props) => {
             name="firstName"
             value={values.firstName}
             onChange={handleChanges}
+            data-testid="firstName"
           />
         </label>
         <label>
@@ -38,6 +28,7 @@ const CheckoutForm = (props) => {
             name="lastName"
             value={values.lastName}
             onChange={handleChanges}
+            data-testid="lastName"
           />
         </label>
         <label>
@@ -46,21 +37,22 @@ const CheckoutForm = (props) => {
             name="address"
             value={values.address}
             onChange={handleChanges}
+            data-testid="address"
           />
         </label>
         <label>
           City:
-          <input name="city" value={values.city} onChange={handleChanges} />
+          <input name="city" value={values.city} onChange={handleChanges} data-testid="city" />
         </label>
         <label>
           State:
-          <input name="state" value={values.state} onChange={handleChanges} />
+          <input name="state" value={values.state} onChange={handleChanges} data-testid="state" />
         </label>
         <label>
           Zip:
-          <input name="zip" value={values.zip} onChange={handleChanges} />
+          <input name="zip" value={values.zip} onChange={handleChanges} data-testid="zip" />
         </label>
-        <button>Checkout</button>
+        <button data-testid="button">Checkout</button>
       </form>
 
       {showSuccessMessage && (

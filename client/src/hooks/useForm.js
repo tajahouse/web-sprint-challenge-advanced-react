@@ -1,21 +1,24 @@
 import { useState } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
-const initialValue = {
+
+
+  
+
+export const useForm = () =>{
+   const [values, setValues] = useState( {
     firstName: "",
     lastName: "",
     address: "",
     city: "",
     state: "",
     zip: "",
-  };
-  
+  }
+  );
+    const [showSuccessMessage, setShowSuccessMessage] = useLocalStorage('initialValue');
 
-export const useForm = () =>{
-    //const [someValue, setSomeValue] = useLocalStorage(darkMode)
-   
-    const [showSuccessMessage, setShowSuccessMessage] = useLocalStorage(initialValue);
-    const [values, setValues] = useState(initialValue);
+    
+    console.log("Initial Value", values)
 
     const handleChanges = (e) => {
         setValues({ ...values, [e.target.name]: e.target.value });
