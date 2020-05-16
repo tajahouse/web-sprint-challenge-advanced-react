@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const initialValue = {
     firstName: "",
@@ -13,7 +14,7 @@ const initialValue = {
 export const useForm = () =>{
     //const [someValue, setSomeValue] = useLocalStorage(darkMode)
    
-    const [showSuccessMessage, setShowSuccessMessage] = useState("values");
+    const [showSuccessMessage, setShowSuccessMessage] = useLocalStorage(initialValue);
     const [values, setValues] = useState(initialValue);
 
     const handleChanges = (e) => {
