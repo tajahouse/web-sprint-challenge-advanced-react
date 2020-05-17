@@ -42,5 +42,11 @@ it('check out form test', async ()=>{
   const zip = getByTestId("zip")
   fireEvent.change(zip, {target:{value:expectedZip}})
 
+  //Testing button
+  const button = getByTestId("button")
+  fireEvent.click(button);
+
+  
+
 
 })
