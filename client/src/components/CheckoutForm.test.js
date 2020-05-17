@@ -26,5 +26,9 @@ it('check out form test', async ()=>{
   const expectedAddress = "444 Fake St."
   const address = getByTestId("address");
   fireEvent.change(address, {target:{value:{expectedAddress}}})
-  
+
+  //Testing citty input field
+  const expectedCity = "Fakeness City"
+  const city = getByTestId("city")
+  fireEvent.change(city,{target:{valuse:expectedCity}})
 })
