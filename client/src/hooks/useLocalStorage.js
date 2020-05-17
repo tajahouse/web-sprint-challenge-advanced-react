@@ -14,5 +14,5 @@ const setValue = value =>{
     window.localStorage.setItem(key, JSON.stringify(value));
 }
 
-return [showSuccessMessage, setShowSuccessMessage];
+return [setValue, showSuccessMessage, setShowSuccessMessage];
 }

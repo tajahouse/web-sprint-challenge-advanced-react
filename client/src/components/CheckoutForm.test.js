@@ -9,3 +9,6 @@ test("form header renders", () => {});
 
 test("form shows success message on submit with form details", () => {});
 
+it('check out form test', async ()=>{
+  const {getByTestId, findByTestId} = render(<CheckoutForm />)
+})

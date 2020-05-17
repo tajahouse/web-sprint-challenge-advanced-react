@@ -15,7 +15,7 @@ export const useForm = () =>{
     zip: "",
   }
   );
-    const [showSuccessMessage, setShowSuccessMessage] = useLocalStorage('initialValue');
+    const [setValue, showSuccessMessage, setShowSuccessMessage] = useLocalStorage('initialValue');
 
     
     console.log("Initial Value", values)
@@ -23,14 +23,17 @@ export const useForm = () =>{
     const handleChanges = (e) => {
       
         setValues({ ...values, [e.target.name]: e.target.value });
+     
  
       };
     
       const handleSubmit = (e) => {
         e.preventDefault();
-  
+
         setShowSuccessMessage(true);
+ 
       };
 
+     
     return [handleChanges,values, handleSubmit,  showSuccessMessage];
 }
