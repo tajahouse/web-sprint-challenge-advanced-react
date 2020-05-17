@@ -25,12 +25,12 @@ it('check out form test', async ()=>{
   //Testing address input field
   const expectedAddress = "444 Fake St."
   const address = getByTestId("address");
-  fireEvent.change(address, {target:{value:{expectedAddress}}})
+  fireEvent.change(address, {target:{value:expectedAddress}})
 
   //Testing city input field
   const expectedCity = "Fakeness City"
   const city = getByTestId("city")
-  fireEvent.change(city,{target:{valuse:expectedCity}})
+  fireEvent.change(city,{target:{value:expectedCity}})
   
   //Testing State input field
   const expectedState = "Faker York"
@@ -40,7 +40,7 @@ it('check out form test', async ()=>{
   //Testing Zip input field
   const expectedZip = "00000"
   const zip = getByTestId("zip")
-  fireEvent.change(zip, {target:{value:"expectedZip"}})
+  fireEvent.change(zip, {target:{value:expectedZip}})
 
 
 })
