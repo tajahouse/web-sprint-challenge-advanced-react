@@ -37,5 +37,10 @@ it('check out form test', async ()=>{
   const state = getByTestId("state")
   fireEvent.change(state, {target:{value:expectedState}})
 
+  //Testing Zip input field
+  const expectedZip = "00000"
+  const zip = getByTestId("zip")
+  fireEvent.change(zip, {target:{value:"expectedZip"}})
+
 
 })
