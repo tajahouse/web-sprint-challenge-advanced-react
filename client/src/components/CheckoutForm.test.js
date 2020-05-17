@@ -44,9 +44,12 @@ it('check out form test', async ()=>{
 
   //Testing button
   const button = getByTestId("button")
-  fireEvent.click(button);
+  fireEvent.click(button)
 
-  
+  // Wait for page to update with success message
 
+  const successMessage = getByTestId("successMessage")
+  fireEvent.click(button)
+  expect(successMessage).toBeInTheDocument();
 
 })
