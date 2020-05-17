@@ -21,13 +21,16 @@ export const useForm = () =>{
     console.log("Initial Value", values)
 
     const handleChanges = (e) => {
+      
         setValues({ ...values, [e.target.name]: e.target.value });
+ 
       };
     
       const handleSubmit = (e) => {
         e.preventDefault();
+  
         setShowSuccessMessage(true);
       };
 
-    return [showSuccessMessage, handleChanges, handleSubmit, values];
+    return [handleChanges,values, handleSubmit,  showSuccessMessage];
 }

@@ -9,20 +9,3 @@ test("form header renders", () => {});
 
 test("form shows success message on submit with form details", () => {});
 
-it('checkout form test', async () => {
-
-  
-  const {getByTestId, findByTestId} = render(<CheckoutForm />);
-  
-  const expectedName = 'Taja';
-  
-  
-  const firstName = getByTestId('firstName');
-  
-  fireEvent.change(firstName,{ target:{value:expectedName}})
-  
-  
-  
-//   fireEvent.click(button)
-//   await waitFor(()=> findByTestId('success-message'))
-  });
