@@ -21,4 +21,10 @@ it('check out form test', async ()=>{
   const expectedLastName = "House";
   const lastName = getByTestId("lastName");
   fireEvent.change(lastName, {target:{value:expectedLastName}})
+
+  //Testing address input field
+  const expectedAddress = "444 Fake St."
+  const address = getByTestId("address");
+  fireEvent.change(address, {target:{value:{expectedAddress}}})
+  
 })
